@@ -2,6 +2,10 @@ var button = document.getElementById("enter");
 var input = document.getElementById("userinput");
 var ul = document.querySelector("ul");
 let lis = document.querySelectorAll('li')
+let trash = document.createElement('button')
+trash.className ='delete'
+trash.textContent ='Delete'
+
  
 
  for(var i=0;i<lis.length;i++){
@@ -13,7 +17,13 @@ let lis = document.querySelectorAll('li')
  }
 
 
+ul.addEventListener('click',function(e){
+	var target = e.target;
+	if(target.classList.contains('delete')){
+		target.parentNode.remove();
+	}
 
+});
 
 
 
@@ -27,6 +37,7 @@ function createListElement() {
 	var li = document.createElement("li");
 	li.appendChild(document.createTextNode(input.value));
 	ul.appendChild(li);
+	li.appendChild(trash)
 	input.value = "";
 }
 
