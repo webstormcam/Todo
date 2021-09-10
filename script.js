@@ -36,9 +36,11 @@ function inputLength() {
 function createListElement() {
 	var li = document.createElement("li");
 	li.appendChild(document.createTextNode(input.value));
+	li.appendChild(trash);
+	li.addEventListener('click',toggle);
 	ul.appendChild(li);
-	li.appendChild(trash)
 	input.value = "";
+	
 }
 
 function addListAfterClick() {
