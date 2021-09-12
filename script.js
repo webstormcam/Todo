@@ -2,9 +2,9 @@ var button = document.getElementById("enter");
 var input = document.getElementById("userinput");
 var ul = document.querySelector("ul");
 let lis = document.querySelectorAll('li')
-let trash = document.createElement('button')
-trash.className ='delete'
-trash.textContent ='Delete'
+// let trash = document.createElement('button')
+// trash.className ='delete'
+// trash.textContent ='Delete'
 
  
 
@@ -34,6 +34,9 @@ function inputLength() {
 }
 
 function createListElement() {
+let trash = document.createElement('button')
+trash.className ='delete'
+trash.textContent ='Delete'
 	var li = document.createElement("li");
 	li.appendChild(document.createTextNode(input.value));
 	li.append(trash);
